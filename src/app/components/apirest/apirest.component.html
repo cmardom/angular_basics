@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-4">
+    <h1 >Grupos <i (click)="limpiarGrupos()"
+                    class="fa fa-eraser" aria-hidden="true"></i></h1>
+    <ul class="list-group">
+        <li *ngFor="let grupo of grupos"
+            (click)="mostrarEquiposGrupo(grupo)"
+            [ngClass]="{'bg-info' : idGrupoSeleccionado === grupo.id}"
+            class="list-group-item">
+            <div>{{ grupo.nombre }}</div>
+        </li>
+    </ul>
+    </div>
+    <div class="col-4">
+        <h1 >Equipos <i (click)="limpiarEquipos()"
+                        *ngIf="idEquipoSeleccionado>=0"
+                        class="fa fa-eraser" aria-hidden="true"
+            ></i></h1>
+        <ul class="list-group">
+            <li *ngFor="let equipo of equipos"
+                (click)="mostrarUsuariosEquipo(equipo)"
+                [ngClass]="{'bg-warning' : idEquipoSeleccionado === equipo.id}"
+
+                class="list-group-item">
+              <div>{{equipo.nombre}}</div>
+            </li>
+        </ul>
+        </div>
+        <div class="col-4">
+            <h1 >Usuarios
+                <a [routerLink]="['/usuarios]', 'nuevo' ]">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            </h1>
+            <ul class="list-group">
+                <li *ngFor="let usuario of usuarios"
+                    class="list-group-item">
+                  {{ usuario.nombre }}
+                    <span>
+                        <a [routerLink]="['/usuarios', usuario.id]">
+                          <i class="fa fa-edit mx-2"  aria-hidden="true"></i>
+                        </a>
+                        <i (click)="borrarUsuario(usuario)" class="fa fa-remove mx-2" aria-hidden="true"></i>
+                    </span>
+                </li>
+            </ul>
+            </div>
+</div>
+<div class="row" *ngIf="errorDB">
+    <h1 class="bg-danger text-center">ERROR DE CONEXIÓN CON SERVIDOR</h1>
+</div>

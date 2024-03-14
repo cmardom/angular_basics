@@ -1,0 +1,34 @@
+<h1>Hay que pulsar todos los botones</h1>
+
+<div class="mt-2 mb-2 row align-items-center">
+    <button class="col btn btn-primary"
+            *ngIf="seleccionado_dias ; else estaciones"
+    (click)="seleccionarEstaciones()">Trabajar con estaciones</button>
+    <ng-template #estaciones> <!-- para cambiar un boton por otro -->
+      <button  class="col btn btn-primary"
+               (click)="seleccionarDias()">Trabajar con días</button>
+
+    </ng-template>
+    <button class="col btn btn-danger" (click)="reset()">Reset botones</button>
+</div>
+
+<div class="bg-warning" *ngIf="botones_pulsados.length < botones_por_pulsar.length">
+    Botones pulsados: {{ botones_pulsados.length }}
+</div>
+<div class="bg-warning" *ngIf="botones_pulsados.length == botones_por_pulsar.length">
+    <h2>TODOS LOS BOTONES PULSADOS</h2>
+
+</div>
+<div class="row mt-2 mx-4"    >
+<!--  tantos botones como elemento tenga el array-->
+<app-hijo *ngFor="let valorArray of botones_por_pulsar, let i = index"
+          [texto]="valorArray"
+          [indice]="i"
+          (evBotonPulsado)="hijoPulsado($event)"
+          [evResetHijo]="evResetPadre">
+<!--          es un input en el hijo-->
+
+
+
+</app-hijo>
+</div>

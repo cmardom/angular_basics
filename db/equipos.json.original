@@ -1,0 +1,68 @@
+{
+  "grupos": [
+    {
+      "id": 1,
+      "nombre": "DAW1"
+    },
+    {
+      "id": 2,
+      "nombre": "DAW2"
+    }
+  ],
+  "equipos": [
+    { "id": 1, "nombre": "Sistemas", "grupo":1},
+    { "id": 2, "nombre": "MySql", "grupo":1},
+    { "id": 3, "nombre": "Angular", "grupo":2},
+    { "id": 4, "nombre": "Java", "grupo":2}
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Laura",
+      "passwd": "passwd",
+      "equipo": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos",
+      "passwd": "passwd",
+      "equipo": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Juan",
+      "passwd": "passwd",
+      "equipo": 3
+    },
+    {
+      "id": 4,
+      "nombre": "Jose",
+      "passwd": "passwd",
+      "equipo": 4
+    },
+    {
+      "id": 5,
+      "nombre": "Miguel",
+      "passwd": "passwd",
+      "equipo": 2
+    },
+    {
+      "id": 6,
+      "nombre": "Luis",
+      "passwd": "passwd",
+      "equipo": 1
+    },
+    {
+      "id": 7,
+      "nombre": "Daniela",
+      "passwd": "passwd",
+      "equipo": 4
+    },
+    {
+      "id": 8,
+      "nombre": "Eva",
+      "passwd": "passwd",
+      "equipo": 3
+    }
+  ]
+}
